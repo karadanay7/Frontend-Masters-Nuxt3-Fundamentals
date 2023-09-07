@@ -62,3 +62,4 @@ yarn preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 # frontendmasters-Nuxt3-Fundamentals
+# Frontend-Masters-Nuxt3-Fundamentals
