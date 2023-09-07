@@ -15,7 +15,8 @@
     </p>
     <h1>HELLO</h1>
     <button @click="fetchTodo">Fetch Data</button>
-
+    <p>Completed Items: {{ completedItems }}</p>
+    <p>Remaining Items: {{ remainingItems }}</p>
     <ul>
       <li v-for="todo in todoData" :key="`todo-id-${todo.id}`">
         <input type="checkbox" :checked="todo.completed" /> {{ todo.title }}
@@ -39,4 +40,13 @@ const fetchTodo = async () => {
     console.error("Error fetching data:", error);
   }
 };
+const completedItems = computed(() => {
+  if (!todoData.value) return 0;
+  return todoData.value.filter((todo) => todo.completed).length;
+});
+
+const remainingItems = computed(() => {
+  if (!todoData.value) return 0;
+  return todoData.value.filter((todo) => !todo.completed).length;
+});
 </script>
